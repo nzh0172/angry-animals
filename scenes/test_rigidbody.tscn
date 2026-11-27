@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cwtewgkl58gqu"]
+
+[ext_resource type="Texture2D" uid="uid://dxcvbmscy0c67" path="res://assets/player/parrot.png" id="1_yh6h7"]
+[ext_resource type="Script" uid="uid://c500c5vvwt1rj" path="res://scripts/test_rigidbody.gd" id="2_f8p3d"]
+[ext_resource type="Texture2D" uid="uid://cc3xmiu4hhu8n" path="res://assets/ui/panel_beige.png" id="2_km83q"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yh6h7"]
+rough = true
+bounce = 0.36
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3owqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(100, 104.54541)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8p3d"]
+rough = true
+bounce = 0.36
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_km83q"]
+bounce = 0.36
+
+[node name="Node2D" type="Node2D" unique_id=1076691498]
+
+[node name="Label" type="Label" parent="." unique_id=1114725225]
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 115.0
+offset_bottom = 91.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "test"
+
+[node name="bird" type="RigidBody2D" parent="." unique_id=1927650378]
+position = Vector2(803, 350)
+physics_material_override = SubResource("PhysicsMaterial_yh6h7")
+linear_velocity = Vector2(500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bird" unique_id=1401562450]
+scale = Vector2(0.25195313, 0.25195313)
+texture = ExtResource("1_yh6h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird" unique_id=821133676]
+scale = Vector2(3.277, 3.277)
+shape = SubResource("CircleShape2D_3owqy")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=422461978]
+position = Vector2(565, 528)
+scale = Vector2(8.57, 0.22)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor" unique_id=508923242]
+texture = ExtResource("2_km83q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=856081518]
+position = Vector2(0.05834198, 2.272705)
+shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="bird3" type="RigidBody2D" parent="." unique_id=1157797379]
+position = Vector2(327, 183)
+physics_material_override = SubResource("PhysicsMaterial_f8p3d")
+angular_velocity = 34.906586
+
+[node name="Sprite2D" type="Sprite2D" parent="bird3" unique_id=1679900404]
+scale = Vector2(0.25195313, 0.25195313)
+texture = ExtResource("1_yh6h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird3" unique_id=255585636]
+scale = Vector2(3.277, 3.277)
+shape = SubResource("CircleShape2D_3owqy")
+
+[node name="bird4" type="RigidBody2D" parent="." unique_id=507077169]
+position = Vector2(359, 255)
+physics_material_override = SubResource("PhysicsMaterial_km83q")
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("2_f8p3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="bird4" unique_id=1591591839]
+scale = Vector2(0.25195313, 0.25195313)
+texture = ExtResource("1_yh6h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird4" unique_id=980301172]
+scale = Vector2(3.277, 3.277)
+shape = SubResource("CircleShape2D_3owqy")
+
+[node name="bird2" type="RigidBody2D" parent="." unique_id=2069512330]
+position = Vector2(884, 482.00003)
+rotation = -0.9180432
+physics_material_override = SubResource("PhysicsMaterial_yh6h7")
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 200)
+
+[node name="Sprite2D" type="Sprite2D" parent="bird2" unique_id=1382403943]
+scale = Vector2(0.25195313, 0.25195313)
+texture = ExtResource("1_yh6h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird2" unique_id=1016778164]
+scale = Vector2(3.277, 3.277)
+shape = SubResource("CircleShape2D_3owqy")
