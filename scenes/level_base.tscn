@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bcheljrheacnc"]
+
+[ext_resource type="Texture2D" uid="uid://1ca5qkmtfoqr" path="res://assets/scene/colored_castle.png" id="1_osu2p"]
+[ext_resource type="Texture2D" uid="uid://5lq6gc55vii6" path="res://assets/scene/waterTop_high.png" id="2_bkdr1"]
+
+[node name="LevelBase" type="Node" unique_id=780593683]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=822981831]
+position = Vector2(580.00006, 252.00783)
+scale = Vector2(1.1347657, 1.1347657)
+texture = ExtResource("1_osu2p")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=458788346]
+scale = Vector2(1.1191406, 1.1191406)
+repeat_size = Vector2(128, 0)
+repeat_times = 8
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1525524066]
+position = Vector2(509.3194, 513.7871)
+texture = ExtResource("2_bkdr1")
